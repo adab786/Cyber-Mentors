@@ -33,7 +33,7 @@ const PORT = process.env.PORT || 5000;
 
 app.get("/users", async (req, res) => {
   try {
-    const data = fetch("https://dummyjson.com/products/1");
+    const data = fetch("https://jsonplaceholder.typicode.com/users");
     const users = await data.json();
     res.json(users);
   } catch (error) {
