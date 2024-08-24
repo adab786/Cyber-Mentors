@@ -31,9 +31,11 @@ const PORT = process.env.PORT || 5000;
 //   res.send("Hello World");
 // });
 
-app.get("/users", (req, res) => {
+app.get("/users", async (req, res) => {
   try {
-    res.send("users");
+    const data = fetch("https://jsonplaceholder.typicode.com/users");
+    const users = await data.json();
+    res.json(users);
   } catch (error) {
     console.log("Error:", error.message);
   }
