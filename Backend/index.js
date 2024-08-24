@@ -32,7 +32,9 @@ const PORT = process.env.PORT || 5000;
 // });
 
 app.get("/users",(req,res)=>{
-  res.json(
+
+  
+  return res.json(
     {
       name:"John",
       age:30
@@ -46,8 +48,6 @@ app.get("/users",(req,res)=>{
       name:"Doe",
       age:35
     }
-
-
 
   )
 }
