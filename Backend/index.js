@@ -45,7 +45,7 @@ app.get("/users", async (req, res) => {
         email: "adx@gmail.com",
       },
     ];
-    res.json(users);
+    res.json(data);
   } catch (error) {
     console.log("Error:", error.message);
   }
