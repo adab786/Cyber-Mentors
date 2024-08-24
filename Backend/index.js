@@ -33,8 +33,18 @@ const PORT = process.env.PORT || 5000;
 
 app.get("/users", async (req, res) => {
   try {
-    const data = fetch("https://jsonplaceholder.typicode.com/users");
-    const users = await data.json();
+    const data = [
+      {
+        name: "John Doe",
+        age: 25,
+        email: "zdc@gmail.com",
+      },
+      {
+        name: "Jane Doe",
+        age: 24,
+        email: "adx@gmail.com",
+      },
+    ];
     res.json(users);
   } catch (error) {
     console.log("Error:", error.message);
