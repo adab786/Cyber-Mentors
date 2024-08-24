@@ -31,6 +31,27 @@ const PORT = process.env.PORT || 5000;
 //   res.send("Hello World");
 // });
 
+app.get("/users",(req,res)=>{
+  res.json(
+    {
+      name:"John",
+      age:30
+    },
+    {
+      name:"Jane",
+      age:25
+    }
+    ,
+    {
+      name:"Doe",
+      age:35
+    }
+
+
+
+  )
+}
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
