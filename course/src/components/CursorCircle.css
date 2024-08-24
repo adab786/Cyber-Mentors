@@ -1,0 +1,19 @@
+.cursor-circle {
+    position: absolute;
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    background-color: rgb(222, 241, 13);
+ /* Adjust color and transparency as needed */
+ opacity: 0.5;
+    border-radius: 50%;
+    pointer-events: none; /* Ensures the circle doesn't interfere with other elements */
+    transform: translate(-50%, -50%); /* Centers the circle around the cursor */
+    transition: background-color 0.3s ease; /* Optional: Add a smooth transition effect */
+ 
+  }
+  
+  /* Optional: Change color on hover or based on specific conditions */
+  .cursor-circle:hover {
+    background-color: rgba(255, 0, 0, 0.5); /* Change color on hover */
+  }
+  
