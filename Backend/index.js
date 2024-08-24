@@ -31,26 +31,13 @@ const PORT = process.env.PORT || 5000;
 //   res.send("Hello World");
 // });
 
-app.get("/users",(req,res)=>{
-
-  
-  return res.json(
-    {
-      name:"John",
-      age:30
-    },
-    {
-      name:"Jane",
-      age:25
-    }
-    ,
-    {
-      name:"Doe",
-      age:35
-    }
-
-  )
-}
+app.get("/users", (req, res) => {
+  try {
+    res.send("users");
+  } catch (error) {
+    console.log("Error:", error.message);
+  }
+});
 
 app.get("/", (req, res) => {
   res.send("Hello World");
