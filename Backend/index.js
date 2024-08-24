@@ -27,19 +27,13 @@ mongoose
     console.log("Error:", error.message);
   });
 
-app.use((req, res) => {
+// app.use((req, res) => {
+//   res.send("Hello World");
+// });
+
+app.get("/", (req, res) => {
   res.send("Hello World");
 });
-
-// Deployment code for vercel app
-
-// if (process.env.NODE_ENV === "production") {
-//   const dirpath = path.resolve();
-//   app.use(express.static("course/dist"));
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(dirpath, "course", "dist", "index.html"));
-//   });
-// }
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
