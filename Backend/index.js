@@ -27,7 +27,7 @@ app.use("/courses", getCourses);
 
 app.get("/course", (req, res) => {
   const data = [
-    ({
+    {
       _id: "66cb08f5e4ce4526c5771dbc",
       title: "Introduction to Graphic Design",
       Image: "https://example.com/graphic-design.jpg",
@@ -46,7 +46,7 @@ app.get("/course", (req, res) => {
         "An advanced course on Python programming covering topics such as data analysis, machine learning, and web development. Ideal for those looking to deepen their Python knowledge.",
       schedule: "Weekends, 2:00 PM - 5:00 PM",
       price: 64.27,
-    }),
+    },
   ];
 
   res.json(data);
