@@ -18,18 +18,18 @@ app.use("/courses", getCourses);
 
 const PORT = process.env.PORT || 5000;
 
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => {
-//     console.log("Connected to MongoDB");
-//   })
-//   .catch((error) => {
-//     console.log("Error:", error.message);
-//   });
+await mongoose
+  .connect(`${process.env.MONGO_URI}/cybermentor`)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.log("Error:", error.message);
+  });
 
-// app.use((req, res) => {
-//   res.send("Hello World");
-// });
+app.use((req, res) => {
+  res.send("Hello World");
+});
 
 app.get("/users", async (req, res) => {
   try {
