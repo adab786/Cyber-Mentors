@@ -40,7 +40,7 @@ function Page3({ mode }) {
   return (
     <>
       <div
-        className={`flex justify-center relative items-center w-full min-h-screen ${backgroundColor}`}
+        className={`flex  justify-center relative items-center w-full h-screen  ${backgroundColor}`}
       >
         <div className="absolute text-white z-30 flex-col font-serif justify-between items-center">
           <h1 className="text-4xl">Any feedback?</h1>
