@@ -6,7 +6,9 @@ function Stores() {
   const [state, setstate] = useState();
 
   const getdata = async () => {
-    const response = await fetch("http://localhost:5000/courses");
+    const response = await fetch(
+      "https://cyber-mentors-git-main-adab786s-projects.vercel.app/course"
+    );
     const data = await response.json();
     // console.log(data);
     // const filtered = data.filter(

@@ -1,5 +1,4 @@
-// Course.js
-// import React from 'react';
+/* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
 import Eyes from "./Eyes";

@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+/* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 
 const Codebox = () => {
