@@ -14,6 +14,7 @@ export const getCourses = async (req, res) => {
     const courses = await Course.find({});
     res.status(200).json(courses);
   } catch (error) {
+    console.log("Error:", error.message);
     res.status(404).json({ error: error.message });
   }
 };
