@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
+import path from "path";
 import express from "express";
 import getCourses from "./router/course.router.js";
 
@@ -12,51 +13,43 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// Define async function to connect to MongoDB and start the server
-const startServer = async () => {
-  try {
-    // Connect to MongoDB
-    await mongoose.connect(`${process.env.MONGO_URI}/cybermentor`);
+const PORT = process.env.PORT || 5000;
+
+mongoose
+  .connect(`${process.env.MONGO_URI}/cybermentor`)
+  .then(() => {
     console.log("Connected to MongoDB");
-
-    // Define routes
-    app.use("/courses", getCourses);
-
-    app.get("/users", (req, res) => {
-      try {
-        const data = [
-          {
-            name: "John Doe",
-            age: 25,
-            email: "zdc@gmail.com",
-          },
-          {
-            name: "Jane Doe",
-            age: 24,
-            email: "adx@gmail.com",
-          },
-        ];
-        res.json(data);
-      } catch (error) {
-        console.log("Error:", error.message);
-        res.status(500).send("Internal Server Error");
-      }
-    });
-
-    app.get("/", (req, res) => {
-      res.send("Hello World");
-    });
-
-    // Start the server
-    const PORT = process.env.PORT || 5000;
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
+  })
+  .catch((error) => {
+    console.log("Error:", error.message);
+  });
+app.use("/courses", getCourses);
+app.get("/users", (req, res) => {
+  // console.log("Received request at /users");
+  try {
+    const data = [
+      {
+        name: "John Doe",
+        age: 25,
+        email: "zdc@gmail.com",
+      },
+      {
+        name: "Jane Doe",
+        age: 24,
+        email: "adx@gmail.com",
+      },
+    ];
+    res.json(data);
+    // res.send("data");
   } catch (error) {
-    console.error("Failed to start server:", error.message);
-    process.exit(1); // Exit process with failure code
+    console.log("Error:", error.message);
   }
-};
+});
 
-// Start the server
-startServer();
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
