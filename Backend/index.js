@@ -1,4 +1,3 @@
-// import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -27,11 +26,8 @@ await mongoose
     console.log("Error:", error.message);
   });
 
-app.use((req, res) => {
-  res.send("Hello World");
-});
-
-app.get("/users", async (req, res) => {
+app.get("/users", (req, res) => {
+  // console.log("Received request at /users");
   try {
     const data = [
       {
@@ -46,6 +42,7 @@ app.get("/users", async (req, res) => {
       },
     ];
     res.json(data);
+    // res.send("data");
   } catch (error) {
     console.log("Error:", error.message);
   }
