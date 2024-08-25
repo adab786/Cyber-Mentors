@@ -2,7 +2,7 @@
 
 function Dasycard({ item }) {
   return (
-    <div className=" hover:scale-105 hover:shadow-lg  hover:bg-slate-200 card bg-slate-180 text-black border-2 w-72 top-10 m-2  shadow-xl">
+    <div className=" hover:scale-105 hover:shadow-lg h-fit hover:bg-slate-200 card bg-slate-180 text-black border-2 w-72 top-10 m-2  shadow-xl ">
       <figure className="px-10 pt-10">
         <img
           src="https://picsum.photos/450/300?grayscale"

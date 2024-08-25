@@ -27,19 +27,19 @@ const Card = ({ mode }) => {
 
   return (
     <motion.div
-      className={`container flex flex-wrap justify-center ${backgroundColor} h-screen`} // Added h-screen for full height
+      className={`container flex flex-wrap justify-center ${backgroundColor} h-full pb-3`} // Added h-screen for full height
       variants={container}
       initial="hidden"
       animate="visible"
     >
-      <div className="flex flex-wrap justify-center items-center w-full h-full">
+      <div className="flex flex-wrap justify-center items-center w-full h-96">
         {" "}
         {/* Adjusted for full width and height */}
         <motion.div
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 1.1 }}
           drag="x"
-          dragConstraints={{ left: -100, right: 100 }}
+          dragConstraints={{ left: -70, right: 70 }}
           variants={item}
           className="w-64 h-64 shadow-2xl shadow-red-600 bg-red-500 m-4 flex justify-center items-center relative text-2xl font-Gameplay"
         >
@@ -51,7 +51,7 @@ const Card = ({ mode }) => {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 1.1 }}
           drag="x"
-          dragConstraints={{ left: -100, right: 100 }}
+          dragConstraints={{ left: -70, right: 70 }}
           variants={item}
           className="w-64 h-64 shadow-2xl shadow-blue-600 bg-blue-500 m-4 flex justify-center items-center relative text-2xl font-Gameplay"
         >
@@ -66,11 +66,11 @@ const Card = ({ mode }) => {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 1.1 }}
           drag="x"
-          dragConstraints={{ left: -100, right: 100 }}
+          dragConstraints={{ left: -70, right: 70 }}
           variants={item}
           className="w-64 h-64 shadow-2xl shadow-green-600 bg-green-500 m-4 flex justify-center items-center relative text-2xl font-Gameplay"
         >
-          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white">
+          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white ">
             <Link to="/Course">Learn Ethical Hacking</Link>
           </h1>
         </motion.div>

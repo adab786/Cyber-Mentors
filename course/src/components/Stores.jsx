@@ -9,11 +9,11 @@ function Stores() {
     const response = await fetch("http://localhost:5000/courses");
     const data = await response.json();
     // console.log(data);
-    const filtered = data.filter(
-      (item) => item.price > 950 && item.price < 999
-    );
+    // const filtered = data.filter(
+    //   (item) => item.price > 950 && item.price < 999
+    // );
 
-    setstate(filtered);
+    setstate(data);
   };
   useEffect(() => {
     getdata();
@@ -21,7 +21,7 @@ function Stores() {
 
   if (!state) {
     return (
-      <h1 className="text-zinc-100 animate-pulse text-3xl font-Gameplay flex justify-center mt-[20%] m-2 ">
+      <h1 className="text-zinc-100 animate-pulse text-3xl font-Gameplay flex justify-center mt-[20%] m-2">
         Work in{" "}
         <span className="text-red-800" role="img" aria-label="emoji">
           🐌
@@ -39,7 +39,7 @@ function Stores() {
   return (
     <div>
       <Backword />
-      <div className="flex flex-wrap justify-evenly bg-slate-100  p-12">
+      <div className="absolute w-full h-full flex flex-wrap justify-evenly  bg-slate-100   p-12">
         {state?.map((item) => (
           <Dasycard key={item._id} item={item} />
         ))}
