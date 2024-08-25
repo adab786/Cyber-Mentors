@@ -48,7 +48,7 @@ function Course({ mode, toggleMode }) {
               WELCOME TO
               <br />
               <br />
-              OUR <span className="text-red-800">WEBSITE..</span>
+              OUR <span className="text-red-800">WEBSITE...</span>
             </h1>
           </div>
         </div>
