@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
-import path from "path";
 import express from "express";
 import getCourses from "./router/course.router.js";
 
@@ -15,42 +14,62 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
-mongoose
-  .connect(`${process.env.MONGO_URI}/cybermentor`)
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((error) => {
-    console.log("Error:", error.message);
-  });
+if (process.env.NODE_ENV == "production") {
+  mongoose
+    .connect("mongodb://localhost:27017/cybermentor")
+    .then(() => {
+      console.log("Connected to MongoDB in development mode");
+    })
+    .catch((error) => {
+      console.log("Error:", error.message);
+    });
+}
+
+// ! production code
+// mongoose
+//   .connect(`${process.env.MONGO_URI}/cybermentor`)
+//   .then(() => {
+//     console.log("Connected to MongoDB");
+//   })
+//   .catch((error) => {
+//     console.log("Error:", error.message);
+//   });
+
+// routers
+import Userrouter from "./router/users.router.js";
+import Postrouter from "./router/post.router.js";
+
+app.use("/users", Userrouter);
 app.use("/courses", getCourses);
+// app.use("/", Postrouter);
+app.use("/post", Userrouter);
 
-app.get("/course", (req, res) => {
-  const data = [
-    {
-      _id: "66cb08f5e4ce4526c5771dbc",
-      title: "Introduction to Graphic Design",
-      Image: "https://example.com/graphic-design.jpg",
-      instructor: "Merlina Port",
-      description:
-        "Learn the basics of graphic design including tools, techniques, and industry best practices. Perfect for beginners looking to get started in design.",
-      schedule: "Weekdays, 10:00 AM - 12:00 PM",
-      price: 104.7,
-    },
-    {
-      _id: "66cb097ee4ce4526c5778239",
-      title: "Advanced Python Programming",
-      Image: "https://example.com/python-programming.jpg",
-      instructor: "Darbie Faltskog",
-      description:
-        "An advanced course on Python programming covering topics such as data analysis, machine learning, and web development. Ideal for those looking to deepen their Python knowledge.",
-      schedule: "Weekends, 2:00 PM - 5:00 PM",
-      price: 64.27,
-    },
-  ];
+// app.get("/course", (req, res) => {
+//   const data = [
+//     {
+//       _id: "66cb08f5e4ce4526c5771dbc",
+//       title: "Introduction to Graphic Design",
+//       Image: "https://example.com/graphic-design.jpg",
+//       instructor: "Merlina Port",
+//       description:
+//         "Learn the basics of graphic design including tools, techniques, and industry best practices. Perfect for beginners looking to get started in design.",
+//       schedule: "Weekdays, 10:00 AM - 12:00 PM",
+//       price: 104.7,
+//     },
+//     {
+//       _id: "66cb097ee4ce4526c5778239",
+//       title: "Advanced Python Programming",
+//       Image: "https://example.com/python-programming.jpg",
+//       instructor: "Darbie Faltskog",
+//       description:
+//         "An advanced course on Python programming covering topics such as data analysis, machine learning, and web development. Ideal for those looking to deepen their Python knowledge.",
+//       schedule: "Weekends, 2:00 PM - 5:00 PM",
+//       price: 64.27,
+//     },
+//   ];
 
-  res.json(data);
-});
+//   res.json(data);
+// });
 // app.get("/users", (req, res) => {
 //   // console.log("Received request at /users");
 //   try {
