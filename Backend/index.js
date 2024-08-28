@@ -14,26 +14,26 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
-if (process.env.NODE_ENV == "production") {
-  mongoose
-    .connect("mongodb://localhost:27017/cybermentor")
-    .then(() => {
-      console.log("Connected to MongoDB in development mode");
-    })
-    .catch((error) => {
-      console.log("Error:", error.message);
-    });
-}
+// if (process.env.NODE_ENV == "production") {
+//   mongoose
+//     .connect("mongodb://localhost:27017/cybermentor")
+//     .then(() => {
+//       console.log("Connected to MongoDB in development mode");
+//     })
+//     .catch((error) => {
+//       console.log("Error:", error.message);
+//     });
+// }
 
 // ! production code
-// mongoose
-//   .connect(`${process.env.MONGO_URI}/cybermentor`)
-//   .then(() => {
-//     console.log("Connected to MongoDB");
-//   })
-//   .catch((error) => {
-//     console.log("Error:", error.message);
-//   });
+mongoose
+  .connect(`${process.env.MONGO_URI}/cybermentor`)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.log("Error:", error.message);
+  });
 
 // routers
 import Userrouter from "./router/users.router.js";
