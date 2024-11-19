@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Eyes from "./Eyes";
 import { MdNightlight } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
+import Userbutton from "../auth/Userbutton";
 // import Cube from "./cube";
 
 function Course({ mode, toggleMode }) {
@@ -32,6 +33,8 @@ function Course({ mode, toggleMode }) {
           >
             {mode === "dark" ? <CiLight /> : <MdNightlight />}
           </button>
+
+          <Userbutton />
         </nav>
         <div className="block ml-5 p-8 md:flex md:m-4 ">
           <div className="w-[90%] h-96 md:h-auto flex justify-center items-center  md:w-[50%]  dark:border-gray-600">
