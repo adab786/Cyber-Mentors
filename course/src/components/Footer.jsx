@@ -7,11 +7,11 @@ const Footer = ({ mode }) => {
       <footer
         className={`footer transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 border-black border-2  footer-center ${Color}  rounded p-10 ${backgroundColor}`}
       >
-        <nav className="grid grid-flow-col gap-4 ">
-          <a className="link link-hover">About us</a>
+        <nav className="grid grid-flow-col gap-4    ">
+          <a className="link link-hover cursor-pointer  z-10 ">About us</a>
           <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          {/* <a className="link link-hover">Jobs</a>
+          <a className="link link-hover">Press kit</a> */}
         </nav>
         <nav>
           <div className=" grid grid-flow-col gap-4">

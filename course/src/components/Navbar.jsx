@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 import { MdNightlight } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 import Userbutton from "../auth/Userbutton";
-import { useUser } from "@clerk/clerk-react";
+// import { useUser } from "@clerk/clerk-react";
 
 function Navbar({ mode, toggleMode }) {
-  const { isSignedIn, isLoaded } = useUser();
+  // const { isSignedIn, isLoaded } = useUser();
 
-  // If authentication state is not loaded or the user is not signed in, return null (don't render Navbar)
-  if (!isLoaded || !isSignedIn) {
-    return null; // This ensures Navbar won't render if not signed in or loading
-  }
+  // // If authentication state is not loaded or the user is not signed in, return null (don't render Navbar)
+  // if (!isLoaded || !isSignedIn) {
+  //   return null; // This ensures Navbar won't render if not signed in or loading
+  // }
 
   return (
     <div>
@@ -28,7 +28,7 @@ function Navbar({ mode, toggleMode }) {
         </ul>
         <button
           onClick={toggleMode}
-          className="hover:shadow-red-500 m-3 w-fit py-3 font-semibold rounded-sm shadow-md hover:bg-blue-600 transition ease-in-out duration-300 cursor-pointer px-4 text-gray-900 dark:text-gray-100"
+          className="hover:shadow-red-500 m-3 w-fit py-3  shadow-none  rounded-sm  hover:bg-blue-600 transition ease-in-out duration-300 cursor-pointer px-4 text-gray-900 dark:text-gray-100"
         >
           {mode === "dark" ? <CiLight /> : <MdNightlight />}
         </button>

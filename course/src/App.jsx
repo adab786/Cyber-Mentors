@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "@clerk/clerk-react";
 import { Analytics } from "@vercel/analytics/react";
+import Loader from "./components/utils/Loader";
 
 // Importing Components
 import Card from "./components/Card";
@@ -38,9 +39,14 @@ function App() {
   const toggleMode = () => {
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   };
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (!isLoaded) {
-    return <div>Loading...</div>;
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 2000); // Simulate loading
+  }, []);
+
+  if (isLoaded && isLoading) {
+    return <Loader />;
   }
 
   return (

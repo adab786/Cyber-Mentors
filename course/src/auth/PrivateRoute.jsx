@@ -1,6 +1,7 @@
 // src/PrivateRoute.js or src/PrivateRoute.jsx
 import { Navigate } from "react-router-dom";
 import { useAuth } from "@clerk/clerk-react";
+import Signin from "./Signin";
 
 // PrivateRoute component to protect routes
 const PrivateRoute = ({ element }) => {
@@ -8,7 +9,8 @@ const PrivateRoute = ({ element }) => {
 
   // If user is not signed in, redirect to the sign-in page
   if (!isSignedIn) {
-    return <Navigate to="/auth/signin" />;
+    <Navigate to="/auth/signin" />;
+    return <Signin />;
   }
 
   // If signed in, render the requested element

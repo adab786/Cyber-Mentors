@@ -34,14 +34,14 @@ function Reveal() {
         transition={{ duration: 0.5 }}
         className="absolute  top-0 left-0 w-full h-full bg-zinc-500"
       >
-        <h1 className="z-40 leading-loose  absolute top-[30%] left-[30%] text-6xl text-white  font-Gameplay capitalize ">
+        <h1 className="z-40 w-[40%] leading-loose  absolute top-[30%] left-[30%] text-6xl text-white  font-Gameplay capitalize ">
           For no<span className="text-green-800">tes</span> like{" "}
-          <span className="text-red-600 font-bold">This</span>
+          <span className="text-red-600 font-bold">This... </span>
         </h1>
         <img
-          src="https://media.licdn.com/dms/image/v2/D4E22AQF6sjWCbL225Q/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1692293701015?e=1726704000&v=beta&t=7EWNjAWJviiqrO2lqMEsBpb6zNO_7Cduz5a3KRe2faQ"
+          src="https://blog.gitguardian.com/content/images/size/w2000/2022/12/blog-SecurityZines-iac-security.png"
           alt="img"
-          className="w-[90%] h-full  m-auto mt-2 blur-sm "
+          className="w-[90%] h-[80]  m-auto mt-2 blur-sm "
         />
       </motion.div>
 
@@ -52,7 +52,7 @@ function Reveal() {
           opacity: isComponentBVisible ? 1 : 0,
           scale: isComponentBVisible ? 1 : 0.8,
         }} // Animate based on visibility
-        transition={{ duration: 0.5 }} 
+        transition={{ duration: 0.5 }}
         className="absolute flex justify-center items-center  bottom-0 left-0 w-full h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
       >
         {/* <h1 className="text-white text-3xl">Component B</h1>
