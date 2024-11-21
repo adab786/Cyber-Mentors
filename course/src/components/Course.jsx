@@ -20,18 +20,26 @@ function Course({ mode, toggleMode }) {
             <img src="/logo.png" alt="Logo" />
           </div>
           <ul className="hidden md:flex cursor-pointer ml-[60%] p-5 gap-9 items-center text-gray-900 dark:text-gray-100">
-            <li>Home</li>
-            <li>About us</li>
-            <li>Contact</li>
+            <li>
+              <Link to="/"> Home</Link>
+            </li>
+            <li>
+              <Link to="/Aboutus"> About us</Link>
+            </li>
+
             <li>
               <Link to="/Course"> Course</Link>
             </li>
           </ul>
           <button
             onClick={toggleMode}
-            className="hover:shadow-red-500 m-3 w-fit py-3  font-semibold rounded-sm shadow-md hover:bg-blue-600 transition ease-in-out duration-300 cursor-pointer px-4 text-gray-900 dark:text-gray-100"
+            className="hover:shadow-red-500 m-3 w-fit py-3  font-semibold rounded-sm shadow-md hover:bg-white transition ease-in-out duration-300 cursor-pointer px-4 text-gray-900 dark:text-gray-100"
           >
-            {mode === "dark" ? <CiLight /> : <MdNightlight />}
+            {mode === "dark" ? (
+              <CiLight color="gray" size={20} />
+            ) : (
+              <MdNightlight />
+            )}
           </button>
 
           <Userbutton />

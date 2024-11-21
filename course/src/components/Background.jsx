@@ -2,7 +2,7 @@
 
 const Background = () => {
   return (
-    <div className="fixed inset-0 z-[-1]">
+    <div className="fixed ">
       <img
         src="https://www.powtoon.com/blog/11-free-image-resources-presentation/"
         alt="Background"

@@ -20,8 +20,7 @@ function Navbar({ mode, toggleMode }) {
         </div>
         <ul className="hidden md:flex cursor-pointer ml-[60%] p-5 gap-9 items-center text-gray-900 dark:text-gray-100">
           <li>Home</li>
-          <li>About us</li>
-          {/* <li>Contact</li> */}
+          <li>About</li>
           <li>
             <Link to="/Course"> Course</Link>
           </li>

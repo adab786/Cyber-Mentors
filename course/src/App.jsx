@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useAuth } from "@clerk/clerk-react";
 import { Analytics } from "@vercel/analytics/react";
 import Loader from "./components/utils/Loader";
+import Certification from "./components/Certification";
+import Dashboard from "./components/Dashboard";
+import NotFound from "./Notfound";
+// Importing the Isonline component to show the offline loader
+import Isonline from "./components/utils/Isonline";
 
 // Importing Components
 import Card from "./components/Card";
@@ -16,6 +21,7 @@ import Codebox from "./components/Codebox";
 import Zines from "./components/Zines";
 import Signin from "./auth/Signin";
 import Userbutton from "./auth/Userbutton";
+import AboutUs from "./components/Aboutus";
 // import Navbar from "./components/Navbar";
 
 // PrivateRoute component
@@ -23,7 +29,7 @@ import PrivateRoute from "./auth/PrivateRoute";
 
 function App() {
   const [mode, setMode] = useState("light");
-  const { isLoaded, isSignedIn } = useAuth();
+  const { isLoaded } = useAuth();
 
   // Change theme mode based on user preference
   useEffect(() => {
@@ -39,13 +45,30 @@ function App() {
   const toggleMode = () => {
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   };
-  const [isLoading, setIsLoading] = useState(true);
+
+  // Check if the user is offline
+  const [isOffline, setIsOffline] = useState(!navigator.onLine);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 2000); // Simulate loading
+    // Event listeners to handle online/offline events
+    const handleOnline = () => setIsOffline(false);
+    const handleOffline = () => setIsOffline(true);
+
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
   }, []);
 
-  if (isLoaded && isLoading) {
+  // If user is offline, render the Isonline page only
+  if (isOffline) {
+    return <Isonline />;
+  }
+
+  if (!isLoaded) {
     return <Loader />;
   }
 
@@ -66,6 +89,11 @@ function App() {
             </div>
           }
         />
+
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Certification" element={<Certification />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        {/* <Route path="/Isonline" element={<Isonline />} /> */}
 
         {/* Protected Routes: Require Authentication */}
         <Route path="/Stores" element={<PrivateRoute element={<Stores />} />} />
@@ -90,9 +118,8 @@ function App() {
         <Route path="/auth/signin" element={<Signin />} />
 
         {/* Catch-All Route for 404 */}
-        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-
       <Analytics />
     </>
   );

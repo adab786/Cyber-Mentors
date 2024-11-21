@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Gameplay";
-    src: url("/src/assets/Gameplay.ttf");
+  font-family: "Gameplay";
+  src: url("/src/assets/Gameplay.ttf");
+}
+
+/* Add this to your global CSS file */
+@keyframes radar81 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -55,6 +55,7 @@ function Table() {
 
   if (progress === 100) {
     toast("You have completed the course  🎉");
+    // return <Navigate to="/certification" />;
   }
 
   return (
@@ -89,7 +90,7 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-black" />
+                  <input type="checkbox" className="checkbox border-blue-500" />
                 </label>
               </th>
               <td>
@@ -151,7 +152,7 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-black" />
+                  <input type="checkbox" className="checkbox border-blue-500" />
                 </label>
               </th>
               <td>
@@ -258,7 +259,7 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-black" />
+                  <input type="checkbox" className="checkbox border-blue-500" />
                 </label>
               </th>
               <td>
@@ -344,7 +345,7 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-black" />
+                  <input type="checkbox" className="checkbox border-blue-500" />
                 </label>
               </th>
               <td>
@@ -474,7 +475,7 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-black" />
+                  <input type="checkbox" className="checkbox border-blue-500" />
                 </label>
               </th>
               <td>
