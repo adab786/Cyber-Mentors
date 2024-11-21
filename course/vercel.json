@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/Notfound.jsx" }]
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/api/(.*)", "status": 404, "dest": "/Notfound.jsx" }
+  ]
 }
