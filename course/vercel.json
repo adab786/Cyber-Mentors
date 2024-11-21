@@ -1,6 +1,6 @@
 {
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/api/(.*)", "status": 404, "dest": "/Notfound.jsx" }
+    { "src": "/(.*)", "status": 404, "dest": "/Notfound.jsx" }
   ]
 }
