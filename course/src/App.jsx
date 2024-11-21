@@ -118,7 +118,7 @@ function App() {
         <Route path="/auth/signin" element={<Signin />} />
 
         {/* Catch-All Route for 404 */}
-        <Route element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Analytics />
     </>
