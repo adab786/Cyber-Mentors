@@ -1,6 +1,5 @@
 {
   "redirects": [
-    { "handle": "filesystem" },
     {
       "source": "/(.*)",
       "status": 404,
