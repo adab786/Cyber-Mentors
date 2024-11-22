@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "destination": "/src/App.jsx",
+      "source": "/*",
+      "destination": "/api/404.jsx",
       "permanent": false
     }
   ]
