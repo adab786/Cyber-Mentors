@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "status": 404,
+
       "destination": "/api/404.jsx",
       "permanent": false
     }
