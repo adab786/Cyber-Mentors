@@ -5,6 +5,7 @@ const createuser = async (req, res) => {
   try {
     const NewUser = await User.create(req.body);
 
+    await NewUser.findByIdAndUpdate(NewUser._id, { $push: { post: post._id } });
     return res.status(201).json({
       NewUser,
       message: "User created successfully",
