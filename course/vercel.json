@@ -1,8 +1,9 @@
 {
   "redirects": [
+    { "handle": "filesystem" },
     {
-      "source": "/*",
-      "destination": "/index.html",
+      "source": "/",
+      "destination": "/src/main.jsx",
       "permanent": false
     }
   ]
