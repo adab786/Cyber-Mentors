@@ -2,8 +2,9 @@
   "redirects": [
     { "handle": "filesystem" },
     {
-      "source": "/",
-      "destination": "/src/App.jsx",
+      "source": "/(.*)",
+      "status": 404,
+      "destination": "/api/404.jsx",
       "permanent": false
     }
   ]
