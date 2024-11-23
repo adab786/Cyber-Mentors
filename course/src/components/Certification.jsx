@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { jsPDF } from "jspdf";
-import Cube from "./Cube";
 import { useUser } from "@clerk/clerk-react";
 import Notfound from "../../api/404";
 import { Navigate } from "react-router-dom";
+import Cube from "./Cube";
 
 function Certification() {
   const [studentName, setStudentName] = useState("");
