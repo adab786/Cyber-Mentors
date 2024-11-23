@@ -6,6 +6,8 @@ const Spline = React.lazy(() => import("@splinetool/react-spline"));
 const Cube = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
+  //   comment out the rest of the code to avoid errors
+
   // Set a timeout or any other condition to make sure Cube is rendered only after it is fully loaded
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 500); // Adjust the timeout if needed
