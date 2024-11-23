@@ -3,7 +3,7 @@ import React, { Suspense, useEffect, useState } from "react";
 // Dynamically import the Spline component for lazy loading
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
-export default function Cube() {
+const Cube = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Set a timeout or any other condition to make sure Cube is rendered only after it is fully loaded
@@ -32,4 +32,6 @@ export default function Cube() {
       </Suspense>
     </div>
   );
-}
+};
+
+export default Cube;
