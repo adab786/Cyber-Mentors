@@ -3,6 +3,8 @@ import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
+// import Certification from "./Certification";
 // import App from "../App";
 
 function Table() {
@@ -11,11 +13,12 @@ function Table() {
     return savedProgress ? parseInt(savedProgress, 10) : 0;
   });
   const boxes = document.querySelectorAll(".checkbox:checked");
+
   // console.log(boxes);
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].style.display = "none";
   }
-
+  const navigate = useNavigate();
   useEffect(() => {
     localStorage.setItem("myData", progress);
   }, [progress, boxes]);
@@ -53,10 +56,19 @@ function Table() {
     };
   }, []);
 
-  if (progress === 100) {
-    toast("You have completed the course  🎉");
-    // return <Navigate to="/certification" />;
-  }
+  // if (progress === 100) {
+  //   toast("You have completed the course  🎉");
+  //   return <Navigate to="/certification" />;
+  // }
+
+  const generatecertificate = () => {
+    if (progress === 100) {
+      toast("You have completed the course  🎉");
+      navigate("/certification"); // Navigate to /certification
+    } else {
+      toast("You have not completed the course yet  🚫");
+    }
+  };
 
   return (
     <div className=" mt-5 font-mono">
@@ -543,6 +555,18 @@ function Table() {
           </tfoot>
         </table>
       </div>
+      {progress === 100 && (
+        <div>
+          <button
+            onClick={() => {
+              generatecertificate();
+            }}
+            className="btn btn-primary"
+          >
+            Generate Certificate
+          </button>
+        </div>
+      )}
     </div>
   );
 }
