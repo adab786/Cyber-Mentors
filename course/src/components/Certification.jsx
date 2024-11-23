@@ -8,6 +8,7 @@ import Cube from "./Cube.jsx";
 function Certification() {
   const [studentName, setStudentName] = useState("");
   const [isCompleted, setIsCompleted] = useState(false);
+  // commenting out the useUser hook to avoid errors
 
   const { user } = useUser();
 
