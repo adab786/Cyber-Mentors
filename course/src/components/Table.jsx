@@ -102,7 +102,10 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-blue-500" />
+                  <input
+                    type="checkbox"
+                    className="checkbox border-blue-500 w-10 h-10"
+                  />
                 </label>
               </th>
               <td>
@@ -164,7 +167,10 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-blue-500" />
+                  <input
+                    type="checkbox"
+                    className="checkbox border-blue-500 w-10 h-10"
+                  />
                 </label>
               </th>
               <td>
@@ -271,7 +277,10 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-blue-500" />
+                  <input
+                    type="checkbox"
+                    className="checkbox border-blue-500 w-10 h-10"
+                  />
                 </label>
               </th>
               <td>
@@ -357,7 +366,10 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-blue-500" />
+                  <input
+                    type="checkbox"
+                    className="checkbox border-blue-500 w-10 h-10"
+                  />
                 </label>
               </th>
               <td>
@@ -487,7 +499,10 @@ function Table() {
             <tr>
               <th>
                 <label>
-                  <input type="checkbox" className="checkbox border-blue-500" />
+                  <input
+                    type="checkbox"
+                    className="checkbox border-blue-500 w-10 h-10"
+                  />
                 </label>
               </th>
               <td>
